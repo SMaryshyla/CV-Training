@@ -1,0 +1,17 @@
+name: Build and Deploy
+
+on:
+    push:
+        branches:
+            - '**'
+            
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'Deploy to environment'
+                required: true
+                type: choice
+                option:
+                    - dev
+                    - qa
+                    - prod
